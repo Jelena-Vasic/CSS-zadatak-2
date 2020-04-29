@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Animacija">
+<meta name="author" content="Jelena Vasic">
+<title>CSS zadatak 2</title>
+<style type="text/css">
+body{
+background-color:#050201;
+}
+#centralni-krug{
+position:absolute;
+top:25px;
+bottom:25px;
+right:25px;
+left:25px;
+width:300px;
+height:300px;
+border-radius:50%;
+background-color:#0b0525;
+animation-name: animacija-1;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+}
+@keyframes animacija-1{
+from {
+transform: scale(0.1, 0.1);
+}
+to {
+transform: scale(1, 1);
+}
+}
+
+#m-krug {
+position:relative;
+margin:150px auto;
+width:350px;
+height:350px;
+border-radius:50%;
+background:radial-gradient(#050201 60%, transparent 60%);
+}
+
+#glow{
+position:relative;
+margin:150px auto;
+width:350px;
+height:350px;
+border-radius:50%;
+background:linear-gradient(#fb5dad,#55fb9f,#b97aff);
+animation-name: animacija-2;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+}
+@keyframes animacija-2{
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(360deg);
+}
+}
+#glow::before{
+content:"";
+position: absolute;
+width:350px;
+height:350px;
+border-radius: 50%;
+background:linear-gradient(#fb5dad,#55fb9f,#b97aff);
+filter:blur(30px);
+}
+
+</style>
+</head>
+<body>
+<div id="glow">
+<div id="m-krug">
+<div id="centralni-krug">
+</div>
+</div>
+</div>
+</body>
+</html>
